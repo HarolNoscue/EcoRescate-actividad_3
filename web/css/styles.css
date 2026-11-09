@@ -1,0 +1,73 @@
+/* EcoRescate · Estilos de la interfaz de demostración */
+:root {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #17352d;
+  background: #f4f7f1;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+.site-header { background: #123d31; color: #fff; }
+.header-content { max-width: 1188px; margin: 0 auto; padding: 24px; }
+.site-header h1 { margin: 0 0 5px; font-size: 29px; letter-spacing: -1px; }
+.site-header p { margin: 0; color: #c5e1d0; }
+.main-content { max-width: 1184px; margin: 25px auto; padding: 0 22px; }
+.grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 18px; }
+.panel, .stat {
+  background: #fff;
+  border: 1px solid #e3e9e1;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 7px 25px #163d2910;
+}
+.panel h2 { margin: 0 0 17px; font-size: 19px; }
+.panel--recent { margin-top: 18px; }
+form { display: grid; gap: 10px; }
+label { font-size: 13px; font-weight: 650; }
+input, select {
+  display: block;
+  width: 100%;
+  border: 1px solid #cddbd1;
+  border-radius: 9px;
+  padding: 11px;
+  margin-top: 4px;
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 13px;
+  background: #1d7252;
+  color: #fff;
+  font: inherit;
+  font-weight: 650;
+}
+button:disabled { background: #b0bdb5; cursor: not-allowed; }
+button.light { background: #e5f2e9; color: #1b6245; }
+.cards { display: grid; gap: 12px; max-height: 540px; overflow-y: auto; }
+.offer { border: 1px solid #e4ebe5; border-radius: 11px; padding: 14px; }
+.offer h3 { margin: 3px 0 8px; }
+small { color: #607c6e; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.pill {
+  font-size: 12px;
+  font-weight: 750;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #e6f5eb;
+  color: #276348;
+}
+.pill.off { background: #fff1df; color: #85501d; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; }
+.stat b { font-size: 27px; display: block; }
+.stat span { font-size: 12px; color: #607c6e; }
+.claim { padding: 9px 0; border-bottom: 1px solid #edf0ec; font-size: 13px; }
+.fine { color: #688275; font-size: 12px; }
+.flash { min-height: 30px; font-size: 14px; color: #28674e; }
+.flash--error { color: #a22d31; }
+
+@media (max-width: 820px) {
+  .grid, .stats { grid-template-columns: 1fr; }
+  .main-content { padding: 0 15px; }
+}

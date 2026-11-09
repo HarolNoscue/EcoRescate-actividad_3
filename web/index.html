@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EcoRescate: demostración académica de donaciones y reservas de alimentos.">
+  <title>EcoRescate | Donaciones inteligentes</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <h1>♻ EcoRescate</h1>
+      <p>Menos desperdicio, más alimentos aprovechados · Demo académica</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="stats" aria-label="Resumen de la plataforma">
+      <div class="stat"><b id="statOffers">—</b><span>Donaciones publicadas</span></div>
+      <div class="stat"><b id="statClaims">—</b><span>Reservas activas</span></div>
+      <div class="stat"><b id="statUnits">—</b><span>Unidades reservadas</span></div>
+    </section>
+
+    <div class="grid">
+      <section class="panel" aria-labelledby="publishHeading">
+        <h2 id="publishHeading">Publicar donación</h2>
+        <form id="publishForm">
+          <label>Establecimiento
+            <input name="provider" placeholder="Panadería El Trigal" required minlength="2">
+          </label>
+          <label>Alimentos disponibles
+            <input name="title" placeholder="Pan integral del día" required minlength="3">
+          </label>
+          <label>Categoría
+            <select name="category">
+              <option>Panadería</option>
+              <option>Frutas y verduras</option>
+              <option>Comidas preparadas</option>
+              <option>Otros</option>
+            </select>
+          </label>
+          <label>Zona de recogida
+            <input name="zone" placeholder="Centro, Neiva" required minlength="2">
+          </label>
+          <label>Unidades
+            <input name="quantity" type="number" min="1" value="10" required>
+          </label>
+          <label>Fecha límite (hora local)
+            <input name="expires_at" id="expiresInput" type="datetime-local" required>
+          </label>
+          <button type="submit">Publicar donación</button>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="offersHeading">
+        <div class="row">
+          <h2 id="offersHeading">Donaciones disponibles</h2>
+          <button type="button" class="light" id="refreshButton">Actualizar</button>
+        </div>
+        <div id="offers" class="cards">Consultando proyección de lectura…</div>
+      </section>
+    </div>
+
+    <section class="panel panel--recent" aria-labelledby="claimsHeading">
+      <div class="row">
+        <h2 id="claimsHeading">Reservas recientes</h2>
+        <small>Actualizadas por eventos</small>
+      </div>
+      <div id="claims">Sin datos</div>
+    </section>
+
+    <div id="flash" class="flash" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>
